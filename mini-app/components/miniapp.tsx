@@ -9,41 +9,41 @@ export default function MiniApp() {
       <nav className="flex flex-wrap justify-center gap-2 py-2">
         <button
           onClick={() => setActive("schedule")}
-          className={active === "schedule" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 bg-[#E2E8F0] text-[#1E293B]"}
+          className={active === "schedule" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#E2E8F0] text-[#1E293B]"}
         >
           Schedule
         </button>
         <button
           onClick={() => setActive("grades")}
-          className={active === "grades" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
+          className={active === "grades" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#E2E8F0] text-[#1E293B]"}
         >
           Grades
         </button>
         <button
           onClick={() => setActive("attendance")}
-          className={active === "attendance" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
+          className={active === "attendance" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#E2E8F0] text-[#1E293B]"}
         >
           Attendance
         </button>
         <button
           onClick={() => setActive("planner")}
-          className={active === "planner" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
+          className={active === "planner" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#E2E8F0] text-[#1E293B]"}
         >
           Planner
         </button>
         <button
           onClick={() => setActive("quiz")}
-          className={active === "quiz" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
+          className={active === "quiz" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 hover:scale-105 bg-[#E2E8F0] text-[#1E293B]"}
         >
           Quiz
         </button>
       </nav>
-      <div className="transition-opacity duration-300">
-        {active === "schedule" && <Schedule />}
-        {active === "grades" && <Grades />}
-        {active === "attendance" && <Attendance />}
-        {active === "planner" && <Planner />}
-        {active === "quiz" && <Quiz />}
+      <div className="transition-opacity duration-300 transform scale-95 opacity-0">
+        {active === "schedule" && <Schedule className="opacity-100" />}
+        {active === "grades" && <Grades className="opacity-100" />}
+        {active === "attendance" && <Attendance className="opacity-100" />}
+        {active === "planner" && <Planner className="opacity-100" />}
+        {active === "quiz" && <Quiz className="opacity-100" />}
       </div>
     </div>
   );
