@@ -256,3 +256,395 @@
 +```
 +
 +Generate an app logo and update the app metadata title and description.
+
+# 2025-11-28 12:36:21.955023
++Got you — let’s **upgrade the design section HARD**, so the AI generates a Mini App that *looks premium*, not plain.
++Here is the **UPDATED FINAL PROMPT with strong design instructions**, keeping everything compatible with the Mini App Factory (no external dependencies, only HTML/CSS/JS).
++
++---
++
++# ✅ **FINAL MINI APP PROMPT (WITH FULL DESIGN UPGRADE — COPY THIS)**
++
++**Build a single-page “ACD Student Assistant” Mini App with a modern, clean, student-friendly interface.
++The app must NOT use external dependencies, CDNs, frameworks, or internet APIs.
++Use only pure HTML, CSS, and JavaScript.
++All features run offline.**
++
++---
++
++# 🎨 **GLOBAL DESIGN SYSTEM (IMPORTANT — FOLLOW EXACTLY)**
++
++**Color Palette (Soft Academic Theme):**
++
++* Primary: `#3B82F6` (soft blue)
++* Secondary: `#1E293B` (dark slate)
++* Accent: `#FBBF24` (amber highlight)
++* Background: `#F1F5F9` (light gray)
++* Card background: `#FFFFFF`
++* Borders: subtle `#E2E8F0`
++
++**Typography:**
++
++* Use a clean, modern sans-serif (system fonts only):
++
++  * `font-family: "Inter", "Segoe UI", Arial, sans-serif;`
++* Section titles: **18–22px bold**
++* Body text: **14–16px**
++
++**Layout Style:**
++
++* Use a **centered container with max-width: 900px**
++* Generous spacing: padding (16–24px), gap (12–16px)
++* Each module appears inside a **card box with rounded corners (radius 12–16px)**
++* Shadows: soft shadow (`rgba(0,0,0,0.06) 0px 2px 6px`)
++* Buttons should be large, rounded, and consistent
++* Inputs styled with padding, borders, and focus states
++
++**Navigation (Top Bar):**
++
++* Sticky top area
++* Horizontal tabs or buttons
++* Selected tab should:
++
++  * have bold text
++  * background `#3B82F6`
++  * white text
++  * rounded corners
++* Other tabs: light background `#E2E8F0`
++
++**Animations:**
++
++* Smooth fade-in when switching modules
++* Button hover: slight background darkening
++* Focus outline for accessibility
++
++---
++
++# 🟦 **REQUIRED MODULES**
++
++(Keep all the design rules above.)
++
++---
++
++## **1. Class Schedule Builder**
++
++**UI Requirements:**
++
++* Inputs in a two-column grid
++* Add button in primary blue
++* Schedule table with alternating row colors
++* Table header with dark slate background + white text
++
++**Functionality:**
++
++* Inputs: Subject Name, Day, Time, Room
++* Add to table
++* Delete row
++* Clear All button
++
++---
++
++## **2. Grade Calculator**
++
++**UI Requirements:**
++
++* Use a card with a colored header (blue)
++* Display average in a big, bold number
++* Use colored badges for grade results:
++
++  * Excellent = green
++  * Good = blue
++  * Needs Improvement = amber
++  * Fail = red
++
++**Functionality:**
++
++* Add subject and score
++* Auto compute average
++* Show pass/fail
++* Delete subjects
++
++---
++
++## **3. Attendance Tracker**
++
++**UI Requirements:**
++
++* Student list in cards
++* Present/Absent/Late buttons are color-coded:
++
++  * Present = green
++  * Absent = red
++  * Late = amber
++* Counters displayed in pill badges
++
++**Functionality:**
++
++* Add student
++* Track attendance
++* Reset individual or all
++
++---
++
++## **4. Study Planner / To-Do List**
++
++**UI Requirements:**
++
++* Tasks appear inside white cards with category labels
++* Completed tasks gray out with strikethrough
++* Use a soft animation when moving to completed section
++
++**Functionality:**
++
++* Add task with category
++* Mark as completed
++* Clear completed
++
++---
++
++## **5. Random Quiz Generator**
++
++**UI Requirements:**
++
++* Centered quiz card
++* Timer displayed as a countdown bubble
++* Show score in a highlighted result card
++
++**Functionality:**
++
++* User inputs a topic + list of items
++* Generates random questions
++* Timer
++* Score summary
++
++---
++
++# 🟩 **ADDITIONAL DESIGN RULES**
++
++* Use consistent spacing
++* Use icons created from simple Unicode (no external icons)
++* Keep everything visually balanced and aligned
++* Use soft borders and subtle shadows
++* Highlight primary actions (Add, Start, Save) in blue
++* Use responsive layout for mobile screens
++
++---
++
++# 🟥 **FINAL BEHAVIOR**
++
++* Everything works with plain JavaScript
++* No page reloads
++* Modules show/hide with smooth transitions
++* Use arrays/objects in memory
++* Reset actions must clear UI properly
++
++---
++
++# ✔️ **END OF PROMPT**
++
++---
++
++If you want, I can also make:
++
++🎨 **UI mockup / wireframe**
++📢 **Your pitch speech for the judges**
++📝 **Feature checklist to verify after generation**
++
++Just tell me!
++
+
+# 2025-11-28 12:36:21.955762
++Got you — let’s **upgrade the design section HARD**, so the AI generates a Mini App that *looks premium*, not plain.
++Here is the **UPDATED FINAL PROMPT with strong design instructions**, keeping everything compatible with the Mini App Factory (no external dependencies, only HTML/CSS/JS).
++
++---
++
++# ✅ **FINAL MINI APP PROMPT (WITH FULL DESIGN UPGRADE — COPY THIS)**
++
++**Build a single-page “ACD Student Assistant” Mini App with a modern, clean, student-friendly interface.
++The app must NOT use external dependencies, CDNs, frameworks, or internet APIs.
++Use only pure HTML, CSS, and JavaScript.
++All features run offline.**
++
++---
++
++# 🎨 **GLOBAL DESIGN SYSTEM (IMPORTANT — FOLLOW EXACTLY)**
++
++**Color Palette (Soft Academic Theme):**
++
++* Primary: `#3B82F6` (soft blue)
++* Secondary: `#1E293B` (dark slate)
++* Accent: `#FBBF24` (amber highlight)
++* Background: `#F1F5F9` (light gray)
++* Card background: `#FFFFFF`
++* Borders: subtle `#E2E8F0`
++
++**Typography:**
++
++* Use a clean, modern sans-serif (system fonts only):
++
++  * `font-family: "Inter", "Segoe UI", Arial, sans-serif;`
++* Section titles: **18–22px bold**
++* Body text: **14–16px**
++
++**Layout Style:**
++
++* Use a **centered container with max-width: 900px**
++* Generous spacing: padding (16–24px), gap (12–16px)
++* Each module appears inside a **card box with rounded corners (radius 12–16px)**
++* Shadows: soft shadow (`rgba(0,0,0,0.06) 0px 2px 6px`)
++* Buttons should be large, rounded, and consistent
++* Inputs styled with padding, borders, and focus states
++
++**Navigation (Top Bar):**
++
++* Sticky top area
++* Horizontal tabs or buttons
++* Selected tab should:
++
++  * have bold text
++  * background `#3B82F6`
++  * white text
++  * rounded corners
++* Other tabs: light background `#E2E8F0`
++
++**Animations:**
++
++* Smooth fade-in when switching modules
++* Button hover: slight background darkening
++* Focus outline for accessibility
++
++---
++
++# 🟦 **REQUIRED MODULES**
++
++(Keep all the design rules above.)
++
++---
++
++## **1. Class Schedule Builder**
++
++**UI Requirements:**
++
++* Inputs in a two-column grid
++* Add button in primary blue
++* Schedule table with alternating row colors
++* Table header with dark slate background + white text
++
++**Functionality:**
++
++* Inputs: Subject Name, Day, Time, Room
++* Add to table
++* Delete row
++* Clear All button
++
++---
++
++## **2. Grade Calculator**
++
++**UI Requirements:**
++
++* Use a card with a colored header (blue)
++* Display average in a big, bold number
++* Use colored badges for grade results:
++
++  * Excellent = green
++  * Good = blue
++  * Needs Improvement = amber
++  * Fail = red
++
++**Functionality:**
++
++* Add subject and score
++* Auto compute average
++* Show pass/fail
++* Delete subjects
++
++---
++
++## **3. Attendance Tracker**
++
++**UI Requirements:**
++
++* Student list in cards
++* Present/Absent/Late buttons are color-coded:
++
++  * Present = green
++  * Absent = red
++  * Late = amber
++* Counters displayed in pill badges
++
++**Functionality:**
++
++* Add student
++* Track attendance
++* Reset individual or all
++
++---
++
++## **4. Study Planner / To-Do List**
++
++**UI Requirements:**
++
++* Tasks appear inside white cards with category labels
++* Completed tasks gray out with strikethrough
++* Use a soft animation when moving to completed section
++
++**Functionality:**
++
++* Add task with category
++* Mark as completed
++* Clear completed
++
++---
++
++## **5. Random Quiz Generator**
++
++**UI Requirements:**
++
++* Centered quiz card
++* Timer displayed as a countdown bubble
++* Show score in a highlighted result card
++
++**Functionality:**
++
++* User inputs a topic + list of items
++* Generates random questions
++* Timer
++* Score summary
++
++---
++
++# 🟩 **ADDITIONAL DESIGN RULES**
++
++* Use consistent spacing
++* Use icons created from simple Unicode (no external icons)
++* Keep everything visually balanced and aligned
++* Use soft borders and subtle shadows
++* Highlight primary actions (Add, Start, Save) in blue
++* Use responsive layout for mobile screens
++
++---
++
++# 🟥 **FINAL BEHAVIOR**
++
++* Everything works with plain JavaScript
++* No page reloads
++* Modules show/hide with smooth transitions
++* Use arrays/objects in memory
++* Reset actions must clear UI properly
++
++---
++
++# ✔️ **END OF PROMPT**
++
++---
++
++If you want, I can also make:
++
++🎨 **UI mockup / wireframe**
++📢 **Your pitch speech for the judges**
++📝 **Feature checklist to verify after generation**
++
++Just tell me!
++
