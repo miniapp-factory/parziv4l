@@ -1,0 +1,258 @@
+
+# 2025-11-28 12:18:06.612343
++Code the following app
++```
++Here is your **FINAL PROMPT** — perfectly structured for the OpenxAI Mini App Factory to generate the full app cleanly, with maximum scoring for Functionality, Idea Quality, and UX.
++
++---
++
++# ✅ **FINAL MINI APP PROMPT (Copy & Paste This)**
++
++**Build a single-page “ACD Student Assistant” Mini App with multiple tools designed to help students manage their school life.
++The app must NOT use external dependencies, CDNs, or APIs.
++All features should run offline using only HTML, CSS, and JavaScript.
++Use buttons or tabs to switch between modules.
++The UI must be clean, organized, modern, and mobile-friendly.**
++
++---
++
++# **🟦 REQUIRED MODULES**
++
++## **1. Class Schedule Builder**
++
++* Inputs: Subject Name, Day, Time, Room
++* “Add Subject” button
++* Display entries in a table
++* Allow deleting individual subjects
++* “Clear All” button
++* Use simple form validation
++
++---
++
++## **2. Grade Calculator**
++
++* User can add multiple subjects with their score
++* Automatically calculate:
++
++  * Average
++  * Equivalent grade (simple scale: 90+ = Excellent, 80–89 = Good, etc.)
++  * Pass/Fail
++* Display results inside a styled card
++* Allow deleting entries
++
++---
++
++## **3. Attendance Tracker**
++
++* Input: Student name
++* Three buttons: **Present**, **Absent**, **Late**
++* Each press updates the counts for that student
++* Display a summary list of all students with their counts
++* Allow resetting individual students or clearing all records
++
++---
++
++## **4. Study Planner / To-Do List**
++
++* Input: Task name
++* Dropdown categories: **School**, **Personal**, **Exams**
++* “Add Task” button
++* Show tasks grouped by category
++* Checkbox to mark tasks as completed
++* Completed tasks move to a separate section
++* “Clear Completed” and “Clear All” buttons
++
++---
++
++## **5. Random Quiz Generator**
++
++* User inputs a topic and a list of items (one per line)
++* When starting the quiz:
++
++  * Randomly generate questions using the items
++  * 5–10 questions per quiz
++  * Timer (countdown) display
++  * Track score
++* Show final score summary
++* Include a “Try Again” button
++
++---
++
++# **🟩 GLOBAL REQUIREMENTS**
++
++* Use only built-in HTML/CSS/JS
++* No internet access, no external libraries
++* Clean tabbed or button-based navigation
++* Simple, student-friendly design
++* All modules appear inside one page, not separate pages
++* Components should use cards, tables, lists, or dialogs
++* Make the interface intuitive and accessible
++* Add clear labels, spacing, and section headers
++
++---
++
++# **🟧 LAYOUT INSTRUCTIONS**
++
++* At the top: a horizontal menu with buttons for each module
++
++  * Schedule
++  * Grades
++  * Attendance
++  * Planner
++  * Quiz
++* Clicking a button switches the visible module
++* Only one module is visible at a time
++* Use smooth transitions when switching sections
++
++---
++
++# **🟥 FINAL BEHAVIOR**
++
++* Everything should work instantly with no page reload
++* All logic handled in JavaScript
++* Use arrays/objects in memory for data
++* Reset buttons must properly clear data
++* The app should be visually clean and easy to use
++
++---
++
++If you want, I can also make you:
++
++✅ A **pitch description** (for judges)
++✅ A **sample UI mockup**
++✅ **Improvements** you can do after the base app is generated
++
++Just tell me!
++
++```
++
++Generate an app logo and update the app metadata title and description.
+
+# 2025-11-28 12:18:06.614181
++Code the following app
++```
++Here is your **FINAL PROMPT** — perfectly structured for the OpenxAI Mini App Factory to generate the full app cleanly, with maximum scoring for Functionality, Idea Quality, and UX.
++
++---
++
++# ✅ **FINAL MINI APP PROMPT (Copy & Paste This)**
++
++**Build a single-page “ACD Student Assistant” Mini App with multiple tools designed to help students manage their school life.
++The app must NOT use external dependencies, CDNs, or APIs.
++All features should run offline using only HTML, CSS, and JavaScript.
++Use buttons or tabs to switch between modules.
++The UI must be clean, organized, modern, and mobile-friendly.**
++
++---
++
++# **🟦 REQUIRED MODULES**
++
++## **1. Class Schedule Builder**
++
++* Inputs: Subject Name, Day, Time, Room
++* “Add Subject” button
++* Display entries in a table
++* Allow deleting individual subjects
++* “Clear All” button
++* Use simple form validation
++
++---
++
++## **2. Grade Calculator**
++
++* User can add multiple subjects with their score
++* Automatically calculate:
++
++  * Average
++  * Equivalent grade (simple scale: 90+ = Excellent, 80–89 = Good, etc.)
++  * Pass/Fail
++* Display results inside a styled card
++* Allow deleting entries
++
++---
++
++## **3. Attendance Tracker**
++
++* Input: Student name
++* Three buttons: **Present**, **Absent**, **Late**
++* Each press updates the counts for that student
++* Display a summary list of all students with their counts
++* Allow resetting individual students or clearing all records
++
++---
++
++## **4. Study Planner / To-Do List**
++
++* Input: Task name
++* Dropdown categories: **School**, **Personal**, **Exams**
++* “Add Task” button
++* Show tasks grouped by category
++* Checkbox to mark tasks as completed
++* Completed tasks move to a separate section
++* “Clear Completed” and “Clear All” buttons
++
++---
++
++## **5. Random Quiz Generator**
++
++* User inputs a topic and a list of items (one per line)
++* When starting the quiz:
++
++  * Randomly generate questions using the items
++  * 5–10 questions per quiz
++  * Timer (countdown) display
++  * Track score
++* Show final score summary
++* Include a “Try Again” button
++
++---
++
++# **🟩 GLOBAL REQUIREMENTS**
++
++* Use only built-in HTML/CSS/JS
++* No internet access, no external libraries
++* Clean tabbed or button-based navigation
++* Simple, student-friendly design
++* All modules appear inside one page, not separate pages
++* Components should use cards, tables, lists, or dialogs
++* Make the interface intuitive and accessible
++* Add clear labels, spacing, and section headers
++
++---
++
++# **🟧 LAYOUT INSTRUCTIONS**
++
++* At the top: a horizontal menu with buttons for each module
++
++  * Schedule
++  * Grades
++  * Attendance
++  * Planner
++  * Quiz
++* Clicking a button switches the visible module
++* Only one module is visible at a time
++* Use smooth transitions when switching sections
++
++---
++
++# **🟥 FINAL BEHAVIOR**
++
++* Everything should work instantly with no page reload
++* All logic handled in JavaScript
++* Use arrays/objects in memory for data
++* Reset buttons must properly clear data
++* The app should be visually clean and easy to use
++
++---
++
++If you want, I can also make you:
++
++✅ A **pitch description** (for judges)
++✅ A **sample UI mockup**
++✅ **Improvements** you can do after the base app is generated
++
++Just tell me!
++
++```
++
++Generate an app logo and update the app metadata title and description.
