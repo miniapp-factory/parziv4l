@@ -5,7 +5,7 @@ export default function MiniApp() {
   const [active, setActive] = useState<"schedule" | "grades" | "attendance" | "planner" | "quiz">("schedule");
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
+    <div className="w-full max-w-4xl mx-auto p-2 sm:p-4">
       <nav className="flex flex-wrap justify-center gap-2 py-2">
         <button
           onClick={() => setActive("schedule")}
@@ -76,7 +76,7 @@ function Schedule() {
   const clearAll = () => setSubjects([]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 sm:space-y-6">
       <h2 className="text-xl font-semibold">Class Schedule Builder</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <input
