@@ -6,34 +6,34 @@ export default function MiniApp() {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
-      <nav className="flex space-x-2 mb-4">
+      <nav className="flex flex-wrap justify-center gap-2 py-2">
         <button
           onClick={() => setActive("schedule")}
-          className={active === "schedule" ? "font-bold" : ""}
+          className={active === "schedule" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
         >
           Schedule
         </button>
         <button
           onClick={() => setActive("grades")}
-          className={active === "grades" ? "font-bold" : ""}
+          className={active === "grades" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
         >
           Grades
         </button>
         <button
           onClick={() => setActive("attendance")}
-          className={active === "attendance" ? "font-bold" : ""}
+          className={active === "attendance" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
         >
           Attendance
         </button>
         <button
           onClick={() => setActive("planner")}
-          className={active === "planner" ? "font-bold" : ""}
+          className={active === "planner" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
         >
           Planner
         </button>
         <button
           onClick={() => setActive("quiz")}
-          className={active === "quiz" ? "font-bold" : ""}
+          className={active === "quiz" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
         >
           Quiz
         </button>
@@ -119,7 +119,7 @@ function Schedule() {
         </button>
       </div>
       {subjects.length > 0 && (
-        <table className="w-full border-collapse">
+        <div className="overflow-x-auto"><table className="w-full border-collapse">
           <thead>
             <tr>
               <th className="border p-2">Subject</th>
@@ -147,7 +147,7 @@ function Schedule() {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table></div>
       )}
     </div>
   );
@@ -216,7 +216,7 @@ function Grades() {
           <p>Average: {average.toFixed(2)}</p>
           <p>Grade: {grade}</p>
           <p>Pass/Fail: {passFail}</p>
-          <table className="w-full border-collapse mt-2">
+          <div className="overflow-x-auto"><table className="w-full border-collapse mt-2">
             <thead>
               <tr>
                 <th className="border p-2">Subject</th>
@@ -240,7 +240,7 @@ function Grades() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         </div>
       )}
     </div>
@@ -315,7 +315,7 @@ function Attendance() {
       {students.length > 0 && (
         <div className="border p-4 rounded">
           <h3 className="font-semibold">Summary</h3>
-          <table className="w-full border-collapse mt-2">
+          <div className="overflow-x-auto"><table className="w-full border-collapse mt-2">
             <thead>
               <tr>
                 <th className="border p-2">Name</th>
@@ -343,7 +343,7 @@ function Attendance() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
           <button
             onClick={clearAll}
             className="mt-2 bg-red-500 text-white px-4 py-2 rounded"
