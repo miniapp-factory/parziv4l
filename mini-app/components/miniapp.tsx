@@ -9,7 +9,7 @@ export default function MiniApp() {
       <nav className="flex flex-wrap justify-center gap-2 py-2">
         <button
           onClick={() => setActive("schedule")}
-          className={active === "schedule" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors bg-[#E2E8F0] text-[#1E293B]"}
+          className={active === "schedule" ? "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 bg-[#3B82F6] text-white font-bold" : "px-3 py-1 text-xs sm:px-4 sm:py-2 text-sm font-medium transition-colors duration-200 bg-[#E2E8F0] text-[#1E293B]"}
         >
           Schedule
         </button>
@@ -38,7 +38,7 @@ export default function MiniApp() {
           Quiz
         </button>
       </nav>
-      <div>
+      <div className="transition-opacity duration-300">
         {active === "schedule" && <Schedule />}
         {active === "grades" && <Grades />}
         {active === "attendance" && <Attendance />}
@@ -132,10 +132,10 @@ function Schedule() {
           <tbody>
             {subjects.map((s) => (
               <tr key={s.id}>
-                <td className="border p-2">{s.name}</td>
-                <td className="border p-2">{s.day}</td>
-                <td className="border p-2">{s.time}</td>
-                <td className="border p-2">{s.room}</td>
+                <td className="border p-2 transition-colors duration-200">{s.name}</td>
+                <td className="border p-2 transition-colors duration-200">{s.day}</td>
+                <td className="border p-2 transition-colors duration-200">{s.time}</td>
+                <td className="border p-2 transition-colors duration-200">{s.room}</td>
                 <td className="border p-2">
                   <button
                     onClick={() => deleteSubject(s.id)}
@@ -227,8 +227,8 @@ function Grades() {
             <tbody>
               {entries.map((e) => (
                 <tr key={e.id}>
-                  <td className="border p-2">{e.subject}</td>
-                  <td className="border p-2">{e.score}</td>
+                  <td className="border p-2 transition-colors duration-200">{e.subject}</td>
+                  <td className="border p-2 transition-colors duration-200">{e.score}</td>
                   <td className="border p-2">
                     <button
                       onClick={() => deleteEntry(e.id)}
@@ -328,10 +328,10 @@ function Attendance() {
             <tbody>
               {students.map((s) => (
                 <tr key={s.name}>
-                  <td className="border p-2">{s.name}</td>
-                  <td className="border p-2">{s.present}</td>
-                  <td className="border p-2">{s.absent}</td>
-                  <td className="border p-2">{s.late}</td>
+                  <td className="border p-2 transition-colors duration-200">{s.name}</td>
+                  <td className="border p-2 transition-colors duration-200">{s.present}</td>
+                  <td className="border p-2 transition-colors duration-200">{s.absent}</td>
+                  <td className="border p-2 transition-colors duration-200">{s.late}</td>
                   <td className="border p-2">
                     <button
                       onClick={() => resetStudent(s.name)}
