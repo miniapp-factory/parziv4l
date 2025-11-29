@@ -1,8 +1,6 @@
-import MiniApp from "@/components/miniapp";
-import { generateMetadata } from "@/lib/farcaster-embed";
+"use client";
+import MiniApp from "../components/miniapp";
 
-export { generateMetadata };
-
-export default function Home() {
+export default function Page() {
   return <MiniApp />;
 }

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function MiniApp() {
+export function SymptomChecker() {
   const [symptoms, setSymptoms] = useState("");
   const [analysis, setAnalysis] = useState("");
   const [chatMessages, setChatMessages] = useState<string[]>([]);
