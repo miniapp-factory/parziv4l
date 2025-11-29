@@ -1642,3 +1642,11 @@
 # 2025-11-29 11:39:33.424664
 +Add a "Menu" button that shows the features.
 +
+
+# 2025-11-29 14:00:11.958698
++fix this build error Job for container@parziv4l.service failed.
++See "systemctl status container@parziv4l.service" and "journalctl -xeu container@parziv4l.service" for details
+
+# 2025-11-29 14:00:11.962705
++fix this build error Job for container@parziv4l.service failed.
++See "systemctl status container@parziv4l.service" and "journalctl -xeu container@parziv4l.service" for details
