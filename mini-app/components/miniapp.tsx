@@ -49,7 +49,7 @@ export default function MiniApp() {
   );
 }
 
-function Schedule() {
+function Schedule(props: {className?: string}) {
   const [subjects, setSubjects] = useState<
     { id: number; name: string; day: string; time: string; room: string }[]
   >([]);
@@ -76,7 +76,7 @@ function Schedule() {
   const clearAll = () => setSubjects([]);
 
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <div className={`space-y-4 sm:space-y-6 ${props.className ?? ''}`}>
       <h2 className="text-xl font-semibold">Class Schedule Builder</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <input
@@ -153,7 +153,7 @@ function Schedule() {
   );
 }
 
-function Grades() {
+function Grades(props: {className?: string}) {
   const [entries, setEntries] = useState<
     { id: number; subject: string; score: number }[]
   >([]);
@@ -187,7 +187,7 @@ function Grades() {
   const passFail = average >= 60 ? "Pass" : "Fail";
 
   return (
-    <div className="space-y-4">
+    <div className={`space-y-4 ${props.className ?? ''}`}>
       <h2 className="text-xl font-semibold">Grade Calculator</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <input
@@ -247,7 +247,7 @@ function Grades() {
   );
 }
 
-function Attendance() {
+function Attendance(props: {className?: string}) {
   const [students, setStudents] = useState<
     { name: string; present: number; absent: number; late: number }[]
   >([]);
@@ -284,7 +284,7 @@ function Attendance() {
   const clearAll = () => setStudents([]);
 
   return (
-    <div className="space-y-4">
+    <div className={`space-y-4 ${props.className ?? ''}`}>
       <h2 className="text-xl font-semibold">Attendance Tracker</h2>
       <div className="flex space-x-2">
         <input
@@ -356,7 +356,7 @@ function Attendance() {
   );
 }
 
-function Planner() {
+function Planner(props: {className?: string}) {
   const [tasks, setTasks] = useState<
     { id: number; name: string; category: string; completed: boolean }[]
   >([]);
@@ -393,7 +393,7 @@ function Planner() {
   const completedTasks = tasks.filter((t) => t.completed);
 
   return (
-    <div className="space-y-4">
+    <div className={`space-y-4 ${props.className ?? ''}`}>
       <h2 className="text-xl font-semibold">Study Planner / To-Do List</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <input
