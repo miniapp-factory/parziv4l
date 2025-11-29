@@ -84,29 +84,42 @@ export function SymptomChecker() {
   );
 }
 
+function MenuScreen({ setActive }: { setActive: React.Dispatch<React.SetStateAction<"menu" | "schedule" | "grades" | "attendance" | "planner" | "quiz"> }) {
+  return (
+    <div className="space-y-4">
+      <h2 className="text-2xl font-semibold">App Features</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <button onClick={() => setActive("schedule")} className="bg-blue-500 text-white py-2 rounded">Schedule</button>
+        <button onClick={() => setActive("grades")} className="bg-blue-500 text-white py-2 rounded">Grades</button>
+        <button onClick={() => setActive("attendance")} className="bg-blue-500 text-white py-2 rounded">Attendance</button>
+        <button onClick={() => setActive("planner")} className="bg-blue-500 text-white py-2 rounded">Planner</button>
+        <button onClick={() => setActive("quiz")} className="bg-blue-500 text-white py-2 rounded">Quiz</button>
+      </div>
+    </div>
+  );
+}
+
 export default function MiniApp() {
-  const [active, setActive] = useState<"schedule" | "grades" | "attendance" | "planner" | "quiz">("schedule");
+  const [active, setActive] = useState<"menu" | "schedule" | "grades" | "attendance" | "planner" | "quiz">("menu");
 
   return (
     <div className="w-full max-w-4xl mx-auto p-2 sm:p-4">
-      <div className="fixed bottom-0 left-0 w-full bg-white shadow-md flex justify-center py-2">
-        <button onClick={() => window.history.back()} className="text-sm text-gray-700">Back</button>
-      </div>
-      <div style={{ display: active === "schedule" ? "block" : "none" }}>
-        <Schedule />
-      </div>
-      <div style={{ display: active === "grades" ? "block" : "none" }}>
-        <Grades />
-      </div>
-      <div style={{ display: active === "attendance" ? "block" : "none" }}>
-        <Attendance />
-      </div>
-      <div style={{ display: active === "planner" ? "block" : "none" }}>
-        <Planner />
-      </div>
-      <div style={{ display: active === "quiz" ? "block" : "none" }}>
-        <Quiz />
-      </div>
+      {active !== "menu" && (
+        <div className="fixed bottom-0 left-0 w-full bg-white shadow-md flex justify-center py-2">
+          <button onClick={() => setActive("menu")} className="text-sm text-gray-700">Back</button>
+        </div>
+      )}
+      {active === "menu" ? (
+        <MenuScreen setActive={setActive} />
+      ) : (
+        <>
+          {active === "schedule" && <Schedule />}
+          {active === "grades" && <Grades />}
+          {active === "attendance" && <Attendance />}
+          {active === "planner" && <Planner />}
+          {active === "quiz" && <Quiz />}
+        </>
+      )}
     </div>
   );
 }
