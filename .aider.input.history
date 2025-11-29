@@ -848,3 +848,287 @@
 +4. Do NOT wrap all sections inside a container with display:none
 +
 +Every wrapper div must control its visibility independently.
+
+# 2025-11-29 04:36:40.611996
++Here is a **polished, copy-paste-ready prompt** that will force the Mini App Factory to generate a **mobile-friendly, modern, clean, responsive design** AND fix common rendering issues.
++
++Paste this directly as your build prompt:
++
++---
++
++# ✅ **FINAL PROMPT — Modern, Mobile-Friendly Redesign (Guaranteed Stable Render)**
++
++Redesign my Mini App UI with a **modern, clean, mobile-first layout**.
++Follow these **strict rules** so the build does not break:
++
++---
++
++## 🎨 **DESIGN REQUIREMENTS**
++
++* Must be **fully mobile-friendly**
++* Use **responsive layout**, preferably Flexbox or CSS grid
++* Style should be:
++
++  * Modern
++  * Clean
++  * Minimal
++  * Smooth edges / rounded corners
++  * Soft shadows
++  * Flat, simple UI similar to Apple / Google design
++* Use spacing, padding, and readable typography
++* Nav bar should be a **bottom navigation bar** on mobile
++* Content should be inside clean white/neutral cards
++* Use consistent padding like `p-4`, `p-6` (if using Tailwind-like classes — simplify if not)
++* UI must be visually separated and easy to scan
++* Avoid clutter and unnecessary elements
++
++---
++
++## 📱 **RESPONSIVENESS RULES**
++
++* The layout must prioritize **mobile portrait view**
++* Container width should be capped around **600px centered**
++* Use fluid layout:
++
++  * `width: 100%`
++  * `max-width: 600px`
++  * `margin: 0 auto`
++
++---
++
++## 🧩 **COMPONENT RENDERING RULES (IMPORTANT — FIX BUILD ERRORS)**
++
++To prevent the blank screen issue, you MUST follow these rules:
++
++### 1. Render all modules using **inline display toggles**, not hidden classes.
++
++Use this exact pattern:
++
++```jsx
++<div style={{ display: active === "schedule" ? "block" : "none" }}>
++  <Schedule />
++</div>
++<div style={{ display: active === "grades" ? "block" : "none" }}>
++  <Grades />
++</div>
++<div style={{ display: active === "attendance" ? "block" : "none" }}>
++  <Attendance />
++</div>
++<div style={{ display: active === "planner" ? "block" : "none" }}>
++  <Planner />
++</div>
++<div style={{ display: active === "quiz" ? "block" : "none" }}>
++  <Quiz />
++</div>
++```
++
++### 2. Do **not** pass `className` props into components unless they explicitly accept them.
++
++### 3. Do **not** wrap all modules inside a container with `display:none`.
++
++### 4. Use:
++
++✔ inline style toggles
++✔ simple flex layouts
++✔ minimal CSS
++
++---
++
++## 🧭 **NAVIGATION BAR REQUIREMENTS**
++
++* Place at **bottom** on mobile
++* Use 4–5 icons with labels (text or emoji icons acceptable)
++* Tabs should highlight active state
++* Nav should be sticky and always visible
++
++Example acceptable style:
++
++```
++bottom: 0;
++position: fixed;
++width: 100%;
++background: white;
++box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
++display: flex;
++justify-content: space-around;
++padding: 10px 0;
++```
++
++---
++
++## 📦 **STRUCTURE REQUIREMENTS**
++
++Your output must include:
++
++1. A main container that centers content
++2. Separate clean modules for Schedule, Grades, Attendance, Planner, Quiz
++3. Bottom navigation
++4. Sticky header or title optional
++5. Fully working render logic using the inline display method
++
++---
++
++## 🧪 **IMPORTANT**
++
++You must not use:
++
++* hidden classes
++* opacity toggles
++* animations that hide initial content
++* external dependencies
++
++---
++
++# ➤ **Now regenerate the entire UI using these rules.**
++
++---
++
++Let me know if you want:
++✨ a darker theme
++✨ a glassmorphism theme
++✨ neumorphic style
++✨ more animations
++✨ or a more gamified “student dashboard” look.
++
+
+# 2025-11-29 04:36:40.613122
++Here is a **polished, copy-paste-ready prompt** that will force the Mini App Factory to generate a **mobile-friendly, modern, clean, responsive design** AND fix common rendering issues.
++
++Paste this directly as your build prompt:
++
++---
++
++# ✅ **FINAL PROMPT — Modern, Mobile-Friendly Redesign (Guaranteed Stable Render)**
++
++Redesign my Mini App UI with a **modern, clean, mobile-first layout**.
++Follow these **strict rules** so the build does not break:
++
++---
++
++## 🎨 **DESIGN REQUIREMENTS**
++
++* Must be **fully mobile-friendly**
++* Use **responsive layout**, preferably Flexbox or CSS grid
++* Style should be:
++
++  * Modern
++  * Clean
++  * Minimal
++  * Smooth edges / rounded corners
++  * Soft shadows
++  * Flat, simple UI similar to Apple / Google design
++* Use spacing, padding, and readable typography
++* Nav bar should be a **bottom navigation bar** on mobile
++* Content should be inside clean white/neutral cards
++* Use consistent padding like `p-4`, `p-6` (if using Tailwind-like classes — simplify if not)
++* UI must be visually separated and easy to scan
++* Avoid clutter and unnecessary elements
++
++---
++
++## 📱 **RESPONSIVENESS RULES**
++
++* The layout must prioritize **mobile portrait view**
++* Container width should be capped around **600px centered**
++* Use fluid layout:
++
++  * `width: 100%`
++  * `max-width: 600px`
++  * `margin: 0 auto`
++
++---
++
++## 🧩 **COMPONENT RENDERING RULES (IMPORTANT — FIX BUILD ERRORS)**
++
++To prevent the blank screen issue, you MUST follow these rules:
++
++### 1. Render all modules using **inline display toggles**, not hidden classes.
++
++Use this exact pattern:
++
++```jsx
++<div style={{ display: active === "schedule" ? "block" : "none" }}>
++  <Schedule />
++</div>
++<div style={{ display: active === "grades" ? "block" : "none" }}>
++  <Grades />
++</div>
++<div style={{ display: active === "attendance" ? "block" : "none" }}>
++  <Attendance />
++</div>
++<div style={{ display: active === "planner" ? "block" : "none" }}>
++  <Planner />
++</div>
++<div style={{ display: active === "quiz" ? "block" : "none" }}>
++  <Quiz />
++</div>
++```
++
++### 2. Do **not** pass `className` props into components unless they explicitly accept them.
++
++### 3. Do **not** wrap all modules inside a container with `display:none`.
++
++### 4. Use:
++
++✔ inline style toggles
++✔ simple flex layouts
++✔ minimal CSS
++
++---
++
++## 🧭 **NAVIGATION BAR REQUIREMENTS**
++
++* Place at **bottom** on mobile
++* Use 4–5 icons with labels (text or emoji icons acceptable)
++* Tabs should highlight active state
++* Nav should be sticky and always visible
++
++Example acceptable style:
++
++```
++bottom: 0;
++position: fixed;
++width: 100%;
++background: white;
++box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
++display: flex;
++justify-content: space-around;
++padding: 10px 0;
++```
++
++---
++
++## 📦 **STRUCTURE REQUIREMENTS**
++
++Your output must include:
++
++1. A main container that centers content
++2. Separate clean modules for Schedule, Grades, Attendance, Planner, Quiz
++3. Bottom navigation
++4. Sticky header or title optional
++5. Fully working render logic using the inline display method
++
++---
++
++## 🧪 **IMPORTANT**
++
++You must not use:
++
++* hidden classes
++* opacity toggles
++* animations that hide initial content
++* external dependencies
++
++---
++
++# ➤ **Now regenerate the entire UI using these rules.**
++
++---
++
++Let me know if you want:
++✨ a darker theme
++✨ a glassmorphism theme
++✨ neumorphic style
++✨ more animations
++✨ or a more gamified “student dashboard” look.
++
