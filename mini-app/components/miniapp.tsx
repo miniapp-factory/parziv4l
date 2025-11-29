@@ -84,7 +84,7 @@ export function SymptomChecker() {
   );
 }
 
-function MenuScreen({ setActive }: { setActive: React.Dispatch<React.SetStateAction<"menu" | "schedule" | "grades" | "attendance" | "planner" | "quiz"> }) {
+function MenuScreen({ setActive }: { setActive: React.Dispatch<React.SetStateAction<"menu" | "schedule" | "grades" | "attendance" | "planner" | "quiz">> }) {
   return (
     <div className="space-y-4">
       <h2 className="text-2xl font-semibold">App Features</h2>
