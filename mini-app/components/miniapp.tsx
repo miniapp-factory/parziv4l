@@ -465,7 +465,7 @@ function Planner(props: {className?: string}) {
   );
 }
 
-function Quiz() {
+function Quiz(props: {className?: string}) {
   const [topic, setTopic] = useState("");
   const [itemsText, setItemsText] = useState("");
   const [questions, setQuestions] = useState<string[]>([]);
@@ -508,7 +508,7 @@ function Quiz() {
   };
 
   return (
-    <div className="space-y-4">
+    <div className={`space-y-4 ${props.className ?? ''}`}>
       <h2 className="text-xl font-semibold">Random Quiz Generator</h2>
       {!showResult && questions.length === 0 && (
         <div className="space-y-2">
