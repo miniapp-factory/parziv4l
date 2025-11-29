@@ -24,9 +24,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <MiniAppProvider>
-          <div className="font-sans min-h-screen flex flex-col place-content-between gap-2">
+          <div className="font-sans min-h-screen flex flex-col">
             <Header />
             {children}
+            <nav className="fixed bottom-0 left-0 w-full bg-background border-t border-border">
+              <ul className="flex justify-around p-2">
+                <li><a href="#symptom" className="text-sm">Symptoms</a></li>
+                <li><a href="#analysis" className="text-sm">Analysis</a></li>
+                <li><a href="#chat" className="text-sm">Chat</a></li>
+              </ul>
+            </nav>
             <Footer />
           </div>
         </MiniAppProvider>
