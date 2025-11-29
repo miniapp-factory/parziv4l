@@ -758,3 +758,93 @@
 +error: 1 dependencies of derivation '/nix/store/b09r666iswslw7qgq324b5mp3billzkr-system-units.drv' failed to build
 +error: 1 dependencies of derivation '/nix/store/l13nvc04zj6d59j0wi06jxnhv2kaa140-etc.drv' failed to build
 +error: 1 dependencies of derivation '/nix/store/6llnvhl9rfbpwszsrgaplw5jdcc4lzin-nixos-system-parziv4l-25.11.20250921.554be64.drv' failed to build
+
+# 2025-11-29 01:29:32.664261
++:
++
++🛠️ Mini App Rendering Fix – MUST FOLLOW
++
++When building the Mini App:
++
++1. Always render each module inside a wrapper <div> that toggles with inline style, not CSS classes.
++
++Use this EXACT pattern:
++
++<div style={{ display: active === "schedule" ? "block" : "none" }}>
++  <Schedule />
++</div>
++<div style={{ display: active === "grades" ? "block" : "none" }}>
++  <Grades />
++</div>
++<div style={{ display: active === "attendance" ? "block" : "none" }}>
++  <Attendance />
++</div>
++<div style={{ display: active === "planner" ? "block" : "none" }}>
++  <Planner />
++</div>
++<div style={{ display: active === "quiz" ? "block" : "none" }}>
++  <Quiz />
++</div>
++
++2. NEVER use:
++
++❌ className="hidden"
++❌ visibility: hidden
++❌ opacity: 0 without toggling
++❌ Empty containers
++❌ Unmounted JSX (active && <Component />) IF the builder tends to break it
++
++3. The modules must load by default.
++
++Ensure schedule is visible first:
++
++const [active, setActive] = useState("schedule");
++
++4. Do NOT wrap all sections inside a container with display:none
++
++Every wrapper div must control its visibility independently.
+
+# 2025-11-29 01:29:32.664630
++:
++
++🛠️ Mini App Rendering Fix – MUST FOLLOW
++
++When building the Mini App:
++
++1. Always render each module inside a wrapper <div> that toggles with inline style, not CSS classes.
++
++Use this EXACT pattern:
++
++<div style={{ display: active === "schedule" ? "block" : "none" }}>
++  <Schedule />
++</div>
++<div style={{ display: active === "grades" ? "block" : "none" }}>
++  <Grades />
++</div>
++<div style={{ display: active === "attendance" ? "block" : "none" }}>
++  <Attendance />
++</div>
++<div style={{ display: active === "planner" ? "block" : "none" }}>
++  <Planner />
++</div>
++<div style={{ display: active === "quiz" ? "block" : "none" }}>
++  <Quiz />
++</div>
++
++2. NEVER use:
++
++❌ className="hidden"
++❌ visibility: hidden
++❌ opacity: 0 without toggling
++❌ Empty containers
++❌ Unmounted JSX (active && <Component />) IF the builder tends to break it
++
++3. The modules must load by default.
++
++Ensure schedule is visible first:
++
++const [active, setActive] = useState("schedule");
++
++4. Do NOT wrap all sections inside a container with display:none
++
++Every wrapper div must control its visibility independently.
