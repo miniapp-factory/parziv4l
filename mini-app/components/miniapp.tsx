@@ -38,12 +38,20 @@ export default function MiniApp() {
           Quiz
         </button>
       </nav>
-      <div className="transition-opacity duration-300 transform scale-95 opacity-0">
-        {active === "schedule" && <Schedule className="opacity-100" />}
-        {active === "grades" && <Grades className="opacity-100" />}
-        {active === "attendance" && <Attendance className="opacity-100" />}
-        {active === "planner" && <Planner className="opacity-100" />}
-        {active === "quiz" && <Quiz className="opacity-100" />}
+      <div style={{ display: active === "schedule" ? "block" : "none" }}>
+        <Schedule />
+      </div>
+      <div style={{ display: active === "grades" ? "block" : "none" }}>
+        <Grades />
+      </div>
+      <div style={{ display: active === "attendance" ? "block" : "none" }}>
+        <Attendance />
+      </div>
+      <div style={{ display: active === "planner" ? "block" : "none" }}>
+        <Planner />
+      </div>
+      <div style={{ display: active === "quiz" ? "block" : "none" }}>
+        <Quiz />
       </div>
     </div>
   );
