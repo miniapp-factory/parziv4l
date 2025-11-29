@@ -2,6 +2,89 @@
 import { useState, useEffect } from "react";
 
 export default function MiniApp() {
+  const [symptoms, setSymptoms] = useState("");
+  const [analysis, setAnalysis] = useState("");
+  const [chatMessages, setChatMessages] = useState<string[]>([]);
+  const [chatInput, setChatInput] = useState("");
+
+  const analyzeSymptoms = () => {
+    if (!symptoms.trim()) return;
+    setAnalysis(`Based on symptoms: ${symptoms}. Consider consulting a healthcare professional.`);
+  };
+
+  const sendMessage = () => {
+    if (!chatInput.trim()) return;
+    setChatMessages((prev) => [...prev, `You: ${chatInput}`]);
+    setChatMessages((prev) => [...prev, `Bot: I received "${chatInput}".`]);
+    setChatInput("");
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
+      <header className="bg-primary text-primary-foreground p-4 shadow-md">
+        <h1 className="text-2xl font-bold">Health Assistant</h1>
+        <p className="text-sm">Your personal symptom checker and chatbot</p>
+      </header>
+
+      <main className="flex-1 p-4 space-y-4">
+        <section id="symptom" className="bg-card rounded-lg shadow p-4">
+          <h2 className="text-lg font-semibold mb-2">Symptom Checker</h2>
+          <textarea
+            className="w-full border rounded p-2 mb-2"
+            placeholder="Describe your symptoms..."
+            value={symptoms}
+            onChange={(e) => setSymptoms(e.target.value)}
+          />
+          <button
+            className="w-full bg-primary text-primary-foreground py-2 rounded hover:bg-primary/90 transition-colors"
+            onClick={analyzeSymptoms}
+          >
+            Analyze Symptoms
+          </button>
+        </section>
+
+        {analysis && (
+          <section id="analysis" className="bg-card rounded-lg shadow p-4">
+            <h2 className="text-lg font-semibold mb-2">Analysis Result</h2>
+            <p>{analysis}</p>
+          </section>
+        )}
+
+        <section id="chat" className="bg-card rounded-lg shadow p-4 flex flex-col h-64">
+          <h2 className="text-lg font-semibold mb-2">Chatbot</h2>
+          <div className="flex-1 overflow-y-auto mb-2">
+            {chatMessages.map((msg, i) => (
+              <p key={i} className="mb-1">
+                {msg}
+              </p>
+            ))}
+          </div>
+          <div className="flex">
+            <input
+              className="flex-1 border rounded p-2"
+              placeholder="Type a message..."
+              value={chatInput}
+              onChange={(e) => setChatInput(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+            />
+            <button
+              className="ml-2 bg-primary text-primary-foreground px-4 rounded hover:bg-primary/90 transition-colors"
+              onClick={sendMessage}
+            >
+              Send
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-background text-foreground p-2 text-center text-sm">
+        © 2025 Health Assistant
+      </footer>
+    </div>
+  );
+}
+
+export default function MiniApp() {
   const [active, setActive] = useState<"schedule" | "grades" | "attendance" | "planner" | "quiz">("schedule");
 
   return (
