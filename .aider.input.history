@@ -1236,3 +1236,241 @@
 +
 +If you want, I can also generate a **ready-made redesigned UI** you can paste directly.
 +
+
+# 2025-11-29 07:06:59.138710
++To fix this **for real**, I need to see **two files**:
++
++### ✅ Please paste:
++
++1. `app/page.tsx`
++2. `components/miniapp.tsx`
++
++---
++
++The error is **100% caused by one of these two situations**:
++
++---
++
++# ❌ **(1) Your `page.tsx` is still a Server Component**
++
++Even if you added `"use client"` somewhere, it might be:
++
++* in the wrong file
++* below imports (invalid)
++* not included in the Nix build layer
++* accidentally removed by another prompt
++
++`"use client"` **must be the first line** of the file:
++
++```tsx
++"use client";
++
++import MiniApp from "../components/miniapp";
++
++export default function Page() {
++  return <MiniApp />;
++}
++```
++
++---
++
++# ❌ **(2) Your client component is being executed as a function — not rendered**
++
++This always triggers the **registerClientReference error**.
++
++Bad:
++
++```tsx
++const page = MiniApp(); // ❌ wrong — calling client component directly
++```
++
++Correct:
++
++```tsx
++<MiniApp /> // ✅ React element, not a function call
++```
++
++---
++
++# ❌ **(3) You are importing a client component inside a server-only context**
++
++For example:
++
++* inside a server-only util
++* inside a load() function
++* inside getServerSideProps (App Router doesn’t use this but some templates still include it)
++
++Next.js won’t allow any of those.
++
++---
++
++# ❌ **(4) You might be exporting incorrectly**
++
++Bad:
++
++```tsx
++export default function MiniApp() {
++   ...
++}
++
++// And somewhere else:
++export default MiniApp(); // ❌ NO — this runs the component
++```
++
++Correct:
++
++```tsx
++export default MiniApp;
++```
++
++---
++
++# ❌ **(5) Your file structure inside Nix changed paths**
++
++The error path shows:
++
++```
++/build/mini-app/components/miniapp.tsx
++```
++
++Your Nix template moves files to `/build`, and sometimes **Next.js cannot detect `"use client"` after bundling** if the file has **any code above it** (even a comment).
++
++So it must look like this:
++
++```tsx
++"use client";  // first line, absolutely nothing above it
++```
++
++Not even a blank line.
++
++---
++
++# I cannot give the exact fix **until I read your files**.
++
++Please paste:
++
++### 👉 `app/page.tsx`
++
++### 👉 `components/miniapp.tsx`
++
++I will rewrite them into **valid App Router client components** that **build cleanly inside Nix**.
++
+
+# 2025-11-29 07:06:59.139232
++To fix this **for real**, I need to see **two files**:
++
++### ✅ Please paste:
++
++1. `app/page.tsx`
++2. `components/miniapp.tsx`
++
++---
++
++The error is **100% caused by one of these two situations**:
++
++---
++
++# ❌ **(1) Your `page.tsx` is still a Server Component**
++
++Even if you added `"use client"` somewhere, it might be:
++
++* in the wrong file
++* below imports (invalid)
++* not included in the Nix build layer
++* accidentally removed by another prompt
++
++`"use client"` **must be the first line** of the file:
++
++```tsx
++"use client";
++
++import MiniApp from "../components/miniapp";
++
++export default function Page() {
++  return <MiniApp />;
++}
++```
++
++---
++
++# ❌ **(2) Your client component is being executed as a function — not rendered**
++
++This always triggers the **registerClientReference error**.
++
++Bad:
++
++```tsx
++const page = MiniApp(); // ❌ wrong — calling client component directly
++```
++
++Correct:
++
++```tsx
++<MiniApp /> // ✅ React element, not a function call
++```
++
++---
++
++# ❌ **(3) You are importing a client component inside a server-only context**
++
++For example:
++
++* inside a server-only util
++* inside a load() function
++* inside getServerSideProps (App Router doesn’t use this but some templates still include it)
++
++Next.js won’t allow any of those.
++
++---
++
++# ❌ **(4) You might be exporting incorrectly**
++
++Bad:
++
++```tsx
++export default function MiniApp() {
++   ...
++}
++
++// And somewhere else:
++export default MiniApp(); // ❌ NO — this runs the component
++```
++
++Correct:
++
++```tsx
++export default MiniApp;
++```
++
++---
++
++# ❌ **(5) Your file structure inside Nix changed paths**
++
++The error path shows:
++
++```
++/build/mini-app/components/miniapp.tsx
++```
++
++Your Nix template moves files to `/build`, and sometimes **Next.js cannot detect `"use client"` after bundling** if the file has **any code above it** (even a comment).
++
++So it must look like this:
++
++```tsx
++"use client";  // first line, absolutely nothing above it
++```
++
++Not even a blank line.
++
++---
++
++# I cannot give the exact fix **until I read your files**.
++
++Please paste:
++
++### 👉 `app/page.tsx`
++
++### 👉 `components/miniapp.tsx`
++
++I will rewrite them into **valid App Router client components** that **build cleanly inside Nix**.
++
