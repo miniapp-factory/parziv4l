@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { Calendar, Book, Clipboard, CalendarCheck, BarChart2 } from "lucide-react";
 
 export function SymptomChecker() {
   const [symptoms, setSymptoms] = useState("");
@@ -89,11 +90,26 @@ function MenuScreen({ setActive }: { setActive: React.Dispatch<React.SetStateAct
     <div className="space-y-4">
       <h2 className="text-2xl font-semibold">App Features</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <button onClick={() => setActive("schedule")} className="bg-blue-500 text-white py-2 rounded">Schedule</button>
-        <button onClick={() => setActive("grades")} className="bg-blue-500 text-white py-2 rounded">Grades</button>
-        <button onClick={() => setActive("attendance")} className="bg-blue-500 text-white py-2 rounded">Attendance</button>
-        <button onClick={() => setActive("planner")} className="bg-blue-500 text-white py-2 rounded">Planner</button>
-        <button onClick={() => setActive("quiz")} className="bg-blue-500 text-white py-2 rounded">Quiz</button>
+        <button onClick={() => setActive("schedule")} className="bg-blue-500 text-white py-2 rounded flex items-center">
+          <Calendar className="mr-2 h-4 w-4" />
+          Schedule
+        </button>
+        <button onClick={() => setActive("grades")} className="bg-blue-500 text-white py-2 rounded flex items-center">
+          <Book className="mr-2 h-4 w-4" />
+          Grades
+        </button>
+        <button onClick={() => setActive("attendance")} className="bg-blue-500 text-white py-2 rounded flex items-center">
+          <Clipboard className="mr-2 h-4 w-4" />
+          Attendance
+        </button>
+        <button onClick={() => setActive("planner")} className="bg-blue-500 text-white py-2 rounded flex items-center">
+          <CalendarCheck className="mr-2 h-4 w-4" />
+          Planner
+        </button>
+        <button onClick={() => setActive("quiz")} className="bg-blue-500 text-white py-2 rounded flex items-center">
+          <BarChart2 className="mr-2 h-4 w-4" />
+          Quiz
+        </button>
       </div>
     </div>
   );
