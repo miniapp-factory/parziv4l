@@ -168,7 +168,7 @@ function Schedule({onBack}: {onBack: () => void}) {
 
   return (
     <div className="space-y-4 sm:space-y-6">
-      <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
+      <button onClick={onBack} className="mb-4 text-sm text-primary-foreground px-2 py-1">Back</button>
       <h2 className="text-xl font-semibold">Class Schedule Builder</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <input
