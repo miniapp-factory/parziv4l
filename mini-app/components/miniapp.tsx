@@ -129,18 +129,18 @@ export default function MiniApp() {
         <MenuScreen setActive={setActive} />
       ) : (
         <>
-          {active === "schedule" && <Schedule />}
-          {active === "grades" && <Grades />}
-          {active === "attendance" && <Attendance />}
-          {active === "planner" && <Planner />}
-          {active === "quiz" && <Quiz />}
+          {active === "schedule" && <Schedule onBack={setActive} />}
+          {active === "grades" && <Grades onBack={setActive} />}
+          {active === "attendance" && <Attendance onBack={setActive} />}
+          {active === "planner" && <Planner onBack={setActive} />}
+          {active === "quiz" && <Quiz onBack={setActive} />}
         </>
       )}
     </div>
   );
 }
 
-function Schedule(props: {className?: string}) {
+function Schedule({className, onBack}: {className?: string; onBack: () => void}) {
   const [subjects, setSubjects] = useState<
     { id: number; name: string; day: string; time: string; room: string }[]
   >([]);
@@ -168,6 +168,7 @@ function Schedule(props: {className?: string}) {
 
   return (
     <div className={`space-y-4 sm:space-y-6 ${props.className ?? ''}`}>
+      <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Class Schedule Builder</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <input
@@ -244,7 +245,7 @@ function Schedule(props: {className?: string}) {
   );
 }
 
-function Grades(props: {className?: string}) {
+function Grades({className, onBack}: {className?: string; onBack: () => void}) {
   const [entries, setEntries] = useState<
     { id: number; subject: string; score: number }[]
   >([]);
@@ -279,6 +280,7 @@ function Grades(props: {className?: string}) {
 
   return (
     <div className={`space-y-4 ${props.className ?? ''}`}>
+      <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Grade Calculator</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <input
@@ -338,7 +340,7 @@ function Grades(props: {className?: string}) {
   );
 }
 
-function Attendance(props: {className?: string}) {
+function Attendance({className, onBack}: {className?: string; onBack: () => void}) {
   const [students, setStudents] = useState<
     { name: string; present: number; absent: number; late: number }[]
   >([]);
@@ -376,6 +378,7 @@ function Attendance(props: {className?: string}) {
 
   return (
     <div className={`space-y-4 ${props.className ?? ''}`}>
+      <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Attendance Tracker</h2>
       <div className="flex space-x-2">
         <input
@@ -447,7 +450,7 @@ function Attendance(props: {className?: string}) {
   );
 }
 
-function Planner(props: {className?: string}) {
+function Planner({className, onBack}: {className?: string; onBack: () => void}) {
   const [tasks, setTasks] = useState<
     { id: number; name: string; category: string; completed: boolean }[]
   >([]);
@@ -485,6 +488,7 @@ function Planner(props: {className?: string}) {
 
   return (
     <div className={`space-y-4 ${props.className ?? ''}`}>
+      <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Study Planner / To-Do List</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <input
@@ -556,7 +560,7 @@ function Planner(props: {className?: string}) {
   );
 }
 
-function Quiz(props: {className?: string}) {
+function Quiz({className, onBack}: {className?: string; onBack: () => void}) {
   const [topic, setTopic] = useState("");
   const [itemsText, setItemsText] = useState("");
   const [questions, setQuestions] = useState<string[]>([]);
@@ -600,6 +604,7 @@ function Quiz(props: {className?: string}) {
 
   return (
     <div className={`space-y-4 ${props.className ?? ''}`}>
+      <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Random Quiz Generator</h2>
       {!showResult && questions.length === 0 && (
         <div className="space-y-2">
