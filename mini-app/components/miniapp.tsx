@@ -129,18 +129,18 @@ export default function MiniApp() {
         <MenuScreen setActive={setActive} />
       ) : (
         <>
-          {active === "schedule" && <Schedule onBack={setActive} />}
-          {active === "grades" && <Grades onBack={setActive} />}
-          {active === "attendance" && <Attendance onBack={setActive} />}
-          {active === "planner" && <Planner onBack={setActive} />}
-          {active === "quiz" && <Quiz onBack={setActive} />}
+          {active === "schedule" && <Schedule onBack={() => setActive("menu")} />}
+          {active === "grades" && <Grades onBack={() => setActive("menu")} />}
+          {active === "attendance" && <Attendance onBack={() => setActive("menu")} />}
+          {active === "planner" && <Planner onBack={() => setActive("menu")} />}
+          {active === "quiz" && <Quiz onBack={() => setActive("menu")} />}
         </>
       )}
     </div>
   );
 }
 
-function Schedule({className, onBack}: {className?: string; onBack: () => void}) {
+function Schedule({onBack}: {onBack: () => void}) {
   const [subjects, setSubjects] = useState<
     { id: number; name: string; day: string; time: string; room: string }[]
   >([]);
@@ -167,7 +167,7 @@ function Schedule({className, onBack}: {className?: string; onBack: () => void})
   const clearAll = () => setSubjects([]);
 
   return (
-    <div className={`space-y-4 sm:space-y-6 ${props.className ?? ''}`}>
+    <div className="space-y-4 sm:space-y-6">
       <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Class Schedule Builder</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -245,7 +245,7 @@ function Schedule({className, onBack}: {className?: string; onBack: () => void})
   );
 }
 
-function Grades({className, onBack}: {className?: string; onBack: () => void}) {
+function Grades({onBack}: {onBack: () => void}) {
   const [entries, setEntries] = useState<
     { id: number; subject: string; score: number }[]
   >([]);
@@ -279,7 +279,7 @@ function Grades({className, onBack}: {className?: string; onBack: () => void}) {
   const passFail = average >= 60 ? "Pass" : "Fail";
 
   return (
-    <div className={`space-y-4 ${props.className ?? ''}`}>
+    <div className="space-y-4">
       <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Grade Calculator</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -340,7 +340,7 @@ function Grades({className, onBack}: {className?: string; onBack: () => void}) {
   );
 }
 
-function Attendance({className, onBack}: {className?: string; onBack: () => void}) {
+function Attendance({onBack}: {onBack: () => void}) {
   const [students, setStudents] = useState<
     { name: string; present: number; absent: number; late: number }[]
   >([]);
@@ -377,7 +377,7 @@ function Attendance({className, onBack}: {className?: string; onBack: () => void
   const clearAll = () => setStudents([]);
 
   return (
-    <div className={`space-y-4 ${props.className ?? ''}`}>
+    <div className="space-y-4">
       <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Attendance Tracker</h2>
       <div className="flex space-x-2">
@@ -450,7 +450,7 @@ function Attendance({className, onBack}: {className?: string; onBack: () => void
   );
 }
 
-function Planner({className, onBack}: {className?: string; onBack: () => void}) {
+function Planner({onBack}: {onBack: () => void}) {
   const [tasks, setTasks] = useState<
     { id: number; name: string; category: string; completed: boolean }[]
   >([]);
@@ -487,7 +487,7 @@ function Planner({className, onBack}: {className?: string; onBack: () => void}) 
   const completedTasks = tasks.filter((t) => t.completed);
 
   return (
-    <div className={`space-y-4 ${props.className ?? ''}`}>
+    <div className="space-y-4">
       <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Study Planner / To-Do List</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -560,7 +560,7 @@ function Planner({className, onBack}: {className?: string; onBack: () => void}) 
   );
 }
 
-function Quiz({className, onBack}: {className?: string; onBack: () => void}) {
+function Quiz({onBack}: {onBack: () => void}) {
   const [topic, setTopic] = useState("");
   const [itemsText, setItemsText] = useState("");
   const [questions, setQuestions] = useState<string[]>([]);
@@ -603,7 +603,7 @@ function Quiz({className, onBack}: {className?: string; onBack: () => void}) {
   };
 
   return (
-    <div className={`space-y-4 ${props.className ?? ''}`}>
+    <div className="space-y-4">
       <button onClick={onBack} className="mb-4 text-sm text-primary-foreground">Back</button>
       <h2 className="text-xl font-semibold">Random Quiz Generator</h2>
       {!showResult && questions.length === 0 && (
